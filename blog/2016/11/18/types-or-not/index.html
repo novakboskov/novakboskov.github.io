@@ -46,12 +46,12 @@ to highlight differences between two flavors of functional programming ---
 dynamically and strictly typed.
 </p>
 
-<div id="outline-container-org7702f4d" class="outline-2">
-<h2 id="org7702f4d">Measure a frequencies list</h2>
-<div class="outline-text-2" id="text-org7702f4d">
-</div><div id="outline-container-org2e9df9e" class="outline-3">
-<h3 id="org2e9df9e">What is the frequencies list?</h3>
-<div class="outline-text-3" id="text-org2e9df9e">
+<div id="outline-container-orga54af49" class="outline-2">
+<h2 id="orga54af49">Measure a frequencies list</h2>
+<div class="outline-text-2" id="text-orga54af49">
+</div><div id="outline-container-org8ac8e0f" class="outline-3">
+<h3 id="org8ac8e0f">What is the frequencies list?</h3>
+<div class="outline-text-3" id="text-org8ac8e0f">
 <p>
 In this context frequency is pair of element and number of it's
 occurrences in a collection. Accordingly, frequencies list is a
@@ -107,9 +107,9 @@ which should return <code>"It's absent"</code>.
 </div>
 </div>
 
-<div id="outline-container-org61061a8" class="outline-3">
-<h3 id="org61061a8">In Clojure with dynamic typing:</h3>
-<div class="outline-text-3" id="text-org61061a8">
+<div id="outline-container-orga1735b1" class="outline-3">
+<h3 id="orga1735b1">In Clojure with dynamic typing:</h3>
+<div class="outline-text-3" id="text-orga1735b1">
 <div class="org-src-container">
 <pre class="src src-clojure">(defn measure [i l freq]
   (if (some #(and (= i (first %))
@@ -140,9 +140,9 @@ It could be used as follows:
 </div>
 </div>
 
-<div id="outline-container-org13f7876" class="outline-3">
-<h3 id="org13f7876">In Haskell with strict typing</h3>
-<div class="outline-text-3" id="text-org13f7876">
+<div id="outline-container-org651ec15" class="outline-3">
+<h3 id="org651ec15">In Haskell with strict typing</h3>
+<div class="outline-text-3" id="text-org651ec15">
 <p>
 I am naturally a bit biased and lean toward dynamic languages such
 as Python and Clojure (and Lisp in general) so my first try is to
@@ -191,9 +191,9 @@ measure 3 10 f
 </div>
 </div>
 
-<div id="outline-container-org2a10638" class="outline-3">
-<h3 id="org2a10638">What bothers me in strictly typed version?</h3>
-<div class="outline-text-3" id="text-org2a10638">
+<div id="outline-container-org441df8c" class="outline-3">
+<h3 id="org441df8c">What bothers me in strictly typed version?</h3>
+<div class="outline-text-3" id="text-org441df8c">
 <p>
 <b><code>Maybe</code> is not boolean.</b>
 </p>
@@ -283,9 +283,9 @@ used in more powerful manner.
 </div>
 </div>
 
-<div id="outline-container-org8ef4738" class="outline-2">
-<h2 id="org8ef4738">To be continued</h2>
-<div class="outline-text-2" id="text-org8ef4738">
+<div id="outline-container-org9ed8e4d" class="outline-2">
+<h2 id="org9ed8e4d">To be continued</h2>
+<div class="outline-text-2" id="text-org9ed8e4d">
 <p>
 This is the place where I will henceforward put little examples and
 comments on this two (more or less) significantly different
