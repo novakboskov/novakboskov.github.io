@@ -1,0 +1,194 @@
+#+TITLE:       What types do to our lives
+#+AUTHOR:      Novak Boškov
+#+EMAIL:       gnovak.boskov@gmail.com
+#+DATE:        2016-11-18
+#+URI:         /blog/%y/%m/%d/types-or-not
+#+KEYWORDS:    functional, Clojure, Haskell, Lisp, Types
+#+TAGS:        Clojure, Haskell, Types
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Usability review of different type systems in functional programming from the perspective of a Haskell newcomer.
+
+*Functional programming is about practical and correct functions.* ---
+some would say.
+
+For me, the word *practical* sounds loudest in the above statement.
+
+This post wraps few approaches to some simple everyday tasks which aim
+to highlight differences between two flavors of functional programming ---
+dynamically and strictly typed.
+
+* Measure a frequencies list
+
+** What is the frequencies list?
+
+   In this context frequency is pair of element and number of it's
+   occurrences in a collection. Accordingly, frequencies list is a
+   list of frequencies of all elements in such a collection.
+
+   Clojure already have [[https://clojuredocs.org/clojure.core/frequencies][=frequencies=]] function in its =cljure.core=.
+   and I can't find corresponding function in Haskell. Regardless of
+   whether it's there or not it could be easily composed:
+
+   #+BEGIN_SRC haskell
+     frequencies :: [Integer] -> [(Integer, Int)]
+     frequencies l = map (\xs@(x:_) -> (x, length xs)) $ group . sort $ l
+   #+END_SRC
+
+   For the sake of illustration:
+
+   #+BEGIN_SRC haskell
+     frequencies [1,2,3,3,3,4,2,1,2] == [(1,2),(2,3),(3,3),(4,1)]
+     frequencies [4,3,5,3,2,3,4,2,1,2] == [(1,1),(2,3),(3,3),(4,2),(5,1)]
+   #+END_SRC
+
+   Let's write a function which returns a string ="It's there"= or
+   ="It's absent"= according to presence of an element =i= in
+   frequencies list =freq= with frequency at least =l=. That is:
+
+   - if we have a list =[9,1,2,4,2,1,1,2,4]= with its corresponding
+     frequencies list
+
+     #+BEGIN_SRC fundamental
+       [{item: 9, frequency: 1}, {item: 1, frequency: 3},
+        {item: 2, frequency: 3}, {item: 4, frequency: 2}]
+     #+END_SRC
+
+     Then =measure(2, 2, freq)= should return ="It's absent"=, same as
+     =measure(2, 3, freq)= and as opposed to =measure(2, 14, freq)=
+     which should return ="It's absent"=.
+
+** In Clojure with dynamic typing:
+
+   #+BEGIN_SRC clojure
+     (defn measure [i l freq]
+       (if (some #(and (= i (first %))
+                       (>= (second %) l))
+                 freq)
+         "It's there"
+         "It's absent"))
+   #+END_SRC
+
+   It could be used as follows:
+
+   #+BEGIN_SRC clojure
+     (def f (frequencies [4,3,5,3,2,3,4,2,1,2]))
+
+     (measure 3 3 f)
+     ;; => "It's there"
+
+     (measure 3 2 f)
+     ;; => "It's there"
+
+     (measure 3 10 f)
+     ;; => "It's absent"
+   #+END_SRC
+
+** In Haskell with strict typing
+
+   I am naturally a bit biased and lean toward dynamic languages such
+   as Python and Clojure (and Lisp in general) so my first try is to
+   do something similar to what I've done in Clojure above. Since I
+   haven't found Haskell's parlance to =some= I would go with plain
+   old =find= from =Data.List=.
+
+   Haskell's =find= is cool as well as Clojure's =some=, it just
+   doesn't return boolean but something little different --- [[http://hackage.haskell.org/package/base-4.9.0.0/docs/Prelude.html#t:Maybe][=Maybe=]]
+   (=Maybe= is used here as some kind of wrapper around returned value
+   if any).
+
+   My naive implementation of =measure= function would be:
+
+   #+BEGIN_SRC haskell
+     import Data.List
+
+     measure i l freq =
+       maybe "It's absent" (const "It's there") $
+       find (\(f, s) -> f == i && s >= l) freq
+   #+END_SRC
+
+   It works similar to Clojure implementation:
+
+   #+BEGIN_SRC haskell
+     let f = frequencies [4,3,5,3,2,3,4,2,1,2]
+
+     measure 3 2 f
+     -- => "It's there"
+
+     measure 3 3 f
+     -- => "It's there"
+
+     measure 3 10 f
+     -- => "It's absent"
+   #+END_SRC
+
+** What bothers me in strictly typed version?
+
+   *=Maybe= is not boolean.*
+
+   And actually in strict Haskell nothing is treated as boolean except
+   booleans itself.
+
+   I, as someone who write some Clojure, am strongly accustomed to
+   Lisp-style =or= constructs. Clojure's =or= could be used to
+   highlight choices priorities. Since Clojure is dynamically typed
+   language =or= expression is capable to return any type and it's
+   very convenient to represent long chains of prioritized, mutually
+   excluded alternatives which could result in different
+   outcomes.
+
+   #+BEGIN_SRC clojure
+     (or (do-most-important-thing)
+         (do-something-less-important)
+         (do-something-less-less-important)
+         ...
+         (default))
+   #+END_SRC
+
+   First =do= expression which result in something /truthy/ will do
+   the short circuit of the =or= expression and others will be
+   discarded.  That's the Clojure's lax type discipline (among other)
+   which allows this type of expressiveness.
+
+   =measure= also culd be written in that style:
+
+   #+BEGIN_SRC clojure
+     (defn measure [i l freq]
+       (or (when (some #(and (= i (first %))
+                             (>= (second %) l))
+                       freq)
+             "It's there")
+           "It's absent"))
+   #+END_SRC
+
+   Since this is a simple decision of only two choices there is no
+   room for expressiveness to shine.
+
+   On the opposite side of tenderness of type systems there is
+   strongly standing Haskell that leads us to optional types through
+   =Maybe=.
+
+   =Maybe= the type could be properly handled using =maybe= function
+   which have the following signature:
+
+   #+BEGIN_SRC haskell
+     maybe :: b -> (a -> b) -> Maybe a -> b
+   #+END_SRC
+
+   It means that one could write a function which receives the type of
+   default value and returns value wrapped in =Maybe= cultivated to
+   type of default value. That function will be called when =Just=
+   instance of =Maybe= is present i.e. when default value isn't
+   picked.
+
+   Although I was initially upset by this approach I have to admit at
+   the end of the day that it nicely fit to Haskell's mindset. Of
+   course, it is capable to express only two kinds of values (=Just
+   anyType= and =Nothing=) but it is easy to believe that it could be
+   used in more powerful manner.
+
+* To be continued
+
+  This is the place where I will henceforward put little examples and
+  comments on this two (more or less) significantly different
+  approaches to functional programing.
