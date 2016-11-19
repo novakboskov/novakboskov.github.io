@@ -4,16 +4,16 @@
     <title>Matter of taste</title>
     <link>http://novakboskov.github.io/</link>
     <description>...matters.</description>
-    <pubDate>пет, 18 нов 2016 23:16:43 CET</pubDate>
-    <lastBuildDate>пет, 18 нов 2016 23:16:43 CET</lastBuildDate>
+    <pubDate>суб, 19 нов 2016 01:02:50 CET</pubDate>
+    <lastBuildDate>суб, 19 нов 2016 01:02:50 CET</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>What types do to our lives</title>
-      <link>http://novakboskov.github.io/blog/2016/11/18/types-or-not</link>
+      <link>http://novakboskov.github.io/blog/2016/11/18/what-types-do-to-our-lives</link>
       <description><![CDATA[Usability review of different type systems in functional programming from the perspective of a Haskell newcomer.]]></description>
-      <pubDate>2016-11-18</pubDate>
-      <guid>http://novakboskov.github.io/blog/2016/11/18/types-or-not</guid>
+      <pubDate>2016-11-19</pubDate>
+      <guid>http://novakboskov.github.io/blog/2016/11/18/what-types-do-to-our-lives</guid>
     </item>
   </channel>
 </rss>

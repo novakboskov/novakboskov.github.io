@@ -46,12 +46,12 @@ to highlight differences between two flavors of functional programming ---
 dynamically and strictly typed.
 </p>
 
-<div id="outline-container-org458d4e7" class="outline-2">
-<h2 id="org458d4e7">Measure a frequencies list</h2>
-<div class="outline-text-2" id="text-org458d4e7">
-</div><div id="outline-container-org721a1a0" class="outline-3">
-<h3 id="org721a1a0">What is the frequencies list?</h3>
-<div class="outline-text-3" id="text-org721a1a0">
+<div id="outline-container-orga72e198" class="outline-2">
+<h2 id="orga72e198">Measure a frequencies list</h2>
+<div class="outline-text-2" id="text-orga72e198">
+</div><div id="outline-container-orgeccc99a" class="outline-3">
+<h3 id="orgeccc99a">What is the frequencies list?</h3>
+<div class="outline-text-3" id="text-orgeccc99a">
 <p>
 In this context frequency is pair of element and number of it's
 occurrences in a collection. Accordingly, frequencies list is a
@@ -107,9 +107,9 @@ which should return <code>"It's absent"</code>.
 </div>
 </div>
 
-<div id="outline-container-orgc7c7491" class="outline-3">
-<h3 id="orgc7c7491">In Clojure with dynamic typing:</h3>
-<div class="outline-text-3" id="text-orgc7c7491">
+<div id="outline-container-org64cc0df" class="outline-3">
+<h3 id="org64cc0df">In Clojure with dynamic typing:</h3>
+<div class="outline-text-3" id="text-org64cc0df">
 <div class="org-src-container">
 <pre class="src src-clojure">(defn measure [i l freq]
   (if (some #(and (= i (first %))
@@ -140,9 +140,9 @@ It could be used as follows:
 </div>
 </div>
 
-<div id="outline-container-org7f17834" class="outline-3">
-<h3 id="org7f17834">In Haskell with strict typing</h3>
-<div class="outline-text-3" id="text-org7f17834">
+<div id="outline-container-orgfad058d" class="outline-3">
+<h3 id="orgfad058d">In Haskell with strict typing</h3>
+<div class="outline-text-3" id="text-orgfad058d">
 <p>
 I am naturally a bit biased and lean toward dynamic languages such
 as Python and Clojure (and Lisp in general) so my first try is to
@@ -191,9 +191,9 @@ measure 3 10 f
 </div>
 </div>
 
-<div id="outline-container-org4dd8c65" class="outline-3">
-<h3 id="org4dd8c65">What bothers me in strictly typed version?</h3>
-<div class="outline-text-3" id="text-org4dd8c65">
+<div id="outline-container-org7407505" class="outline-3">
+<h3 id="org7407505">What bothers me in strictly typed version?</h3>
+<div class="outline-text-3" id="text-org7407505">
 <p>
 <b><code>Maybe</code> is not boolean.</b>
 </p>
@@ -283,9 +283,9 @@ used in more powerful manner.
 </div>
 </div>
 
-<div id="outline-container-orgb22d290" class="outline-2">
-<h2 id="orgb22d290">To be continued</h2>
-<div class="outline-text-2" id="text-orgb22d290">
+<div id="outline-container-org9588b84" class="outline-2">
+<h2 id="org9588b84">To be continued</h2>
+<div class="outline-text-2" id="text-org9588b84">
 <p>
 This is the place where I will henceforward put little examples and
 comments on this two (more or less) significantly different
@@ -299,7 +299,7 @@ approaches to functional programing.
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2016-11-18</span>
-        <span title="last modification date" class="post-info">2016-11-18</span>
+        <span title="last modification date" class="post-info">2016-11-19</span>
         <span title="tags" class="post-info"><a href="/tags/clojure/">Clojure</a>, <a href="/tags/haskell/">Haskell</a>, <a href="/tags/types/">Types</a></span>
         <span title="author" class="post-info">Novak Boškov</span>
       </div>
@@ -308,8 +308,8 @@ approaches to functional programing.
         <div id="disqus_thread"></div>
         <script type="text/javascript">
           //var disqus_developer = 1;
-          var disqus_identifier = "/blog/2016/11/18/types-or-not";
-          var disqus_url = "http://novakboskov.github.io/blog/2016/11/18/types-or-not";
+          var disqus_identifier = "/blog/2016/11/18/what-types-do-to-our-lives";
+          var disqus_url = "http://novakboskov.github.io/blog/2016/11/18/what-types-do-to-our-lives";
           var disqus_shortname = 'forint';
           /* * * DON'T EDIT BELOW THIS LINE * * */
           (function() {
