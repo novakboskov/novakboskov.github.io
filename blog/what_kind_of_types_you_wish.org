@@ -9,6 +9,9 @@
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: Usability review of different type systems in functional programming from the perspective of a Haskell newcomer.
 
+Usability review of different type systems in functional programming
+from the perspective of a Haskell newcomer.
+
 *Functional programming is about practical and correct functions.* ---
 some would say.
 
