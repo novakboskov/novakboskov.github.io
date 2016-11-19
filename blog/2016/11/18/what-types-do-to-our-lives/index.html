@@ -32,6 +32,11 @@
 <div class="post">
 <h1>What types do to our lives</h1>
 <p>
+Usability review of different type systems in functional programming
+from the perspective of a Haskell newcomer.
+</p>
+
+<p>
 <b>Functional programming is about practical and correct functions.</b> ---
 some would say.
 </p>
@@ -46,12 +51,12 @@ to highlight differences between two flavors of functional programming ---
 dynamically and strictly typed.
 </p>
 
-<div id="outline-container-org2f980ac" class="outline-2">
-<h2 id="org2f980ac">Measure a frequencies list</h2>
-<div class="outline-text-2" id="text-org2f980ac">
-</div><div id="outline-container-org52305db" class="outline-3">
-<h3 id="org52305db">What is the frequencies list?</h3>
-<div class="outline-text-3" id="text-org52305db">
+<div id="outline-container-org99a6752" class="outline-2">
+<h2 id="org99a6752">Measure a frequencies list</h2>
+<div class="outline-text-2" id="text-org99a6752">
+</div><div id="outline-container-org5dfac31" class="outline-3">
+<h3 id="org5dfac31">What is the frequencies list?</h3>
+<div class="outline-text-3" id="text-org5dfac31">
 <p>
 In this context frequency is pair of element and number of it's
 occurrences in a collection. Accordingly, frequencies list is a
@@ -107,9 +112,9 @@ which should return <code>"It's absent"</code>.
 </div>
 </div>
 
-<div id="outline-container-org1d825e3" class="outline-3">
-<h3 id="org1d825e3">In Clojure with dynamic typing:</h3>
-<div class="outline-text-3" id="text-org1d825e3">
+<div id="outline-container-orgd64c432" class="outline-3">
+<h3 id="orgd64c432">In Clojure with dynamic typing:</h3>
+<div class="outline-text-3" id="text-orgd64c432">
 <div class="org-src-container">
 <pre class="src src-clojure">(defn measure [i l freq]
   (if (some #(and (= i (first %))
@@ -140,9 +145,9 @@ It could be used as follows:
 </div>
 </div>
 
-<div id="outline-container-org242e45b" class="outline-3">
-<h3 id="org242e45b">In Haskell with strict typing</h3>
-<div class="outline-text-3" id="text-org242e45b">
+<div id="outline-container-org5304db0" class="outline-3">
+<h3 id="org5304db0">In Haskell with strict typing</h3>
+<div class="outline-text-3" id="text-org5304db0">
 <p>
 I am naturally a bit biased and lean toward dynamic languages such
 as Python and Clojure (and Lisp in general) so my first try is to
@@ -191,9 +196,9 @@ measure 3 10 f
 </div>
 </div>
 
-<div id="outline-container-orgd7a7397" class="outline-3">
-<h3 id="orgd7a7397">What bothers me in strictly typed version?</h3>
-<div class="outline-text-3" id="text-orgd7a7397">
+<div id="outline-container-org8a4f521" class="outline-3">
+<h3 id="org8a4f521">What bothers me in strictly typed version?</h3>
+<div class="outline-text-3" id="text-org8a4f521">
 <p>
 <b><code>Maybe</code> is not boolean.</b>
 </p>
@@ -283,9 +288,9 @@ used in more powerful manner.
 </div>
 </div>
 
-<div id="outline-container-org9fd4dd3" class="outline-2">
-<h2 id="org9fd4dd3">To be continued</h2>
-<div class="outline-text-2" id="text-org9fd4dd3">
+<div id="outline-container-org7e987e6" class="outline-2">
+<h2 id="org7e987e6">To be continued</h2>
+<div class="outline-text-2" id="text-org7e987e6">
 <p>
 This is the place where I will henceforward put little examples and
 comments on this two (more or less) significantly different
