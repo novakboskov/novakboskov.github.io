@@ -61,7 +61,7 @@ dynamically and strictly typed.
      =measure(2, 3, freq)= and as opposed to =measure(2, 14, freq)=
      which should return ="It's absent"=.
 
-** In Clojure with dynamic typing:
+** In Clojure with dynamic typing
 
    #+BEGIN_SRC clojure
      (defn measure [i l freq]
