@@ -51,12 +51,12 @@ to highlight differences between two flavors of functional programming ---
 dynamically and strictly typed.
 </p>
 
-<div id="outline-container-org5e87cd9" class="outline-2">
-<h2 id="org5e87cd9">Measure a frequencies list</h2>
-<div class="outline-text-2" id="text-org5e87cd9">
-</div><div id="outline-container-orgb8cfbf3" class="outline-3">
-<h3 id="orgb8cfbf3">What is the frequencies list?</h3>
-<div class="outline-text-3" id="text-orgb8cfbf3">
+<div id="outline-container-orgbb8a520" class="outline-2">
+<h2 id="orgbb8a520">Measure a frequencies list</h2>
+<div class="outline-text-2" id="text-orgbb8a520">
+</div><div id="outline-container-org331dbc9" class="outline-3">
+<h3 id="org331dbc9">What is the frequencies list?</h3>
+<div class="outline-text-3" id="text-org331dbc9">
 <p>
 In this context frequency is pair of element and number of it's
 occurrences in a collection. Accordingly, frequencies list is a
@@ -64,7 +64,7 @@ list of frequencies of all elements in such a collection.
 </p>
 
 <p>
-Clojure already have <a href="https://clojuredocs.org/clojure.core/frequencies"><code>frequencies</code></a> function in its <code>cljure.core</code>.
+Clojure already have <a href="https://clojuredocs.org/clojure.core/frequencies"><code>frequencies</code></a> function in its <code>clojure.core</code>.
 and I can't find corresponding function in Haskell. Regardless of
 whether it's there or not it could be easily composed:
 </p>
@@ -112,9 +112,9 @@ which should return <code>"It's absent"</code>.
 </div>
 </div>
 
-<div id="outline-container-orgbc8dd35" class="outline-3">
-<h3 id="orgbc8dd35">In Clojure with dynamic typing</h3>
-<div class="outline-text-3" id="text-orgbc8dd35">
+<div id="outline-container-org544f45f" class="outline-3">
+<h3 id="org544f45f">In Clojure with dynamic typing</h3>
+<div class="outline-text-3" id="text-org544f45f">
 <div class="org-src-container">
 <pre class="src src-clojure">(defn measure [i l freq]
   (if (some #(and (= i (first %))
@@ -145,9 +145,9 @@ It could be used as follows:
 </div>
 </div>
 
-<div id="outline-container-org372aae5" class="outline-3">
-<h3 id="org372aae5">In Haskell with strict typing</h3>
-<div class="outline-text-3" id="text-org372aae5">
+<div id="outline-container-orgf567d1e" class="outline-3">
+<h3 id="orgf567d1e">In Haskell with strict typing</h3>
+<div class="outline-text-3" id="text-orgf567d1e">
 <p>
 I am naturally a bit biased and lean toward dynamic languages such
 as Python and Clojure (and Lisp in general) so my first try is to
@@ -196,9 +196,9 @@ measure 3 10 f
 </div>
 </div>
 
-<div id="outline-container-orgeb124c8" class="outline-3">
-<h3 id="orgeb124c8">What bothers me in strictly typed version?</h3>
-<div class="outline-text-3" id="text-orgeb124c8">
+<div id="outline-container-org14f278c" class="outline-3">
+<h3 id="org14f278c">What bothers me in strictly typed version?</h3>
+<div class="outline-text-3" id="text-org14f278c">
 <p>
 <b><code>Maybe</code> is not boolean.</b>
 </p>
@@ -288,9 +288,9 @@ used in more powerful manner.
 </div>
 </div>
 
-<div id="outline-container-orgdb229c1" class="outline-2">
-<h2 id="orgdb229c1">To be continued</h2>
-<div class="outline-text-2" id="text-orgdb229c1">
+<div id="outline-container-org0357611" class="outline-2">
+<h2 id="org0357611">To be continued</h2>
+<div class="outline-text-2" id="text-org0357611">
 <p>
 This is the place where I will henceforward put little examples and
 comments on this two (more or less) significantly different
@@ -304,7 +304,7 @@ approaches to functional programing.
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2016-11-18</span>
-        <span title="last modification date" class="post-info">2016-11-20</span>
+        <span title="last modification date" class="post-info">2016-12-02</span>
         <span title="tags" class="post-info"><a href="/tags/clojure/">Clojure</a>, <a href="/tags/haskell/">Haskell</a>, <a href="/tags/types/">Types</a></span>
         <span title="author" class="post-info">Novak Boškov</span>
       </div>
