@@ -29,7 +29,7 @@ dynamically and strictly typed.
    occurrences in a collection. Accordingly, frequencies list is a
    list of frequencies of all elements in such a collection.
 
-   Clojure already have [[https://clojuredocs.org/clojure.core/frequencies][=frequencies=]] function in its =clojure.core=.
+   Clojure already have [[https://clojuredocs.org/clojure.core/frequencies][=frequencies=]] function in its =clojure.core=
    and I can't find corresponding function in Haskell. Regardless of
    whether it's there or not it could be easily composed:
 
