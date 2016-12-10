@@ -3,7 +3,7 @@
 #+EMAIL:       gnovak.boskov@gmail.com
 #+DATE:        2016-11-18
 #+URI:         /blog/%y/%m/%d/what-types-do-to-our-lives
-#+KEYWORDS:    functional, Clojure, Haskell, Lisp, Types
+#+KEYWORDS:    functional, Clojure, Haskell, Lisp, types
 #+TAGS:        Clojure, Haskell, Types
 #+LANGUAGE:    en
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t

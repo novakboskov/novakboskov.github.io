@@ -1,0 +1,14 @@
+#+TITLE:       On concurrency in Clojure
+#+AUTHOR:      Novak Boškov
+#+EMAIL:       gnovak.boskov@gmail.com
+#+DATE:        2016-12-10 суб
+#+URI:         /blog/%y/%m/%d/on-concurrency-in-clojure
+#+KEYWORDS:    Clojure, concurrency
+#+TAGS:        Clojure, Concurrency
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: different concurrency concepts in Clojure and ClojureScript
+
+* Software Transactional Memory --- [[https://en.wikipedia.org/wiki/Software_transactional_memory][STM]]
+
+#+INCLUDE: ../../Clojure/concurrency/src/concurrency/core.clj :src clojure :only-contents :lines "4-28"
