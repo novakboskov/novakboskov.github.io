@@ -1,0 +1,10 @@
+#+TITLE:       GNU/Emacs as SQL IDE
+#+AUTHOR:      Novak Boškov
+#+EMAIL:       gnovak.boskov@gmail.com
+#+DATE:        2017-02-05 нед
+#+URI:         /blog/%y/%m/%d/gnu-emacs-as-sql-ide
+#+KEYWORDS:    sql, emacs, gnu, ide
+#+TAGS:        emacs, sql, ide
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Using Emacs as SQL IDE.
