@@ -8,3 +8,5 @@
 #+LANGUAGE:    en
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: Using Emacs as SQL IDE.
+
+* Coming soon
