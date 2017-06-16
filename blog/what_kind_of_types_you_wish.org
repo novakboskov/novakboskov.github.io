@@ -57,7 +57,7 @@ dynamically and strictly typed.
         {item: 2, frequency: 3}, {item: 4, frequency: 2}]
      #+END_SRC
 
-     Then =measure(2, 2, freq)= should return ="It's absent"=, same as
+     Then =measure(2, 2, freq)= should return ="It's there"=, same as
      =measure(2, 3, freq)= and as opposed to =measure(2, 14, freq)=
      which should return ="It's absent"=.
 
