@@ -1,0 +1,16 @@
+#+TITLE:       Jet another blog on difference between Lisp and C/C++ macro system
+#+AUTHOR:      Novak Boškov
+#+EMAIL:       gnovak.boskov@gmail.com
+#+DATE:        2017-06-23 пет
+#+URI:         /blog/%y/%m/%d/jet-another-blog-on-difference-between-lisp-and-c-c++-macro-system
+#+KEYWORDS:    Lisp, C, C++, macro, meta programming
+#+TAGS:        Lisp, C
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: <TODO: insert your description here>
+
+* Lisp is homoiconic and that's a big thing
+  As [[https://gcc.gnu.org/onlinedocs/cpp/Macro-Arguments.html][gcc documentation]] pointing up arguments to function-like C macros
+  /must be valid C identifiers/. A lisp macro really *is* an ordinary
+  function but only evaluated in macro expansion phase. And Lisp code
+  is perfectly valid parameter for such a function.
