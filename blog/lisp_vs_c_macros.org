@@ -14,3 +14,30 @@
   /must be valid C identifiers/. A lisp macro really *is* an ordinary
   function but only evaluated in macro expansion phase. And Lisp code
   is perfectly valid parameter for such a function.
+
+** Consequences
+   * Consider following C code:
+     #+BEGIN_SRC c
+       switch (tuple->type) {
+       case BOOL_TYPE: BUILD_TUPLE_ENTRY(bool); break;
+       case INT_TYPE: BUILD_TUPLE_ENTRY(int); break;
+       case DOUBLE_TYPE: BUILD_TUPLE_ENTRY(double); break;
+       case CHAR_TYPE: BUILD_TUPLE_ENTRY(char); break;
+       case STRING_TYPE: {
+           char *old = tuple->data[i].v;
+           char *v = malloc(sizeof(char) * strlen(old) + 1);
+           strcpy(v, old);
+           BUILD_TUPLE_ENTRY_POINTER;
+           break;
+       };
+       }
+     #+END_SRC
+
+     Let assume that we have following snippet used multiple times
+     thorough our codebase and we want to wrap it inside a macro.
+
+     Every case clause is likely to have multiple statements/expressions.
+
+     Lisp can pass a list of expressions as a parameter to macro and
+     jack it in using =do= while C is not able to the same in such a
+     elegant manner.
