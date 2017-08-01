@@ -41,3 +41,6 @@
      Lisp can pass a list of expressions as a parameter to macro and
      jack it in using =do= while C is not able to the same in such a
      elegant manner.
+
+* Lisp macros are "ordinary functions"
+  - you can call functions in macro expansion time (e.g print)
