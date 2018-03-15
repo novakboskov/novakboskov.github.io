@@ -1,0 +1,46 @@
+#+TITLE:       Socio-analysis of software niche based on Stack Overflow's annual survey
+#+AUTHOR:      Novak Boškov
+#+EMAIL:       gnovak.boskov@gmail.com
+#+DATE:        2018-03-15 Thu
+#+URI:         /blog/%y/%m/%d/socio-analysis-of-software-niche-based-on-stack-overflows-annual-survey
+#+KEYWORDS:    software, industry, stack, overflow
+#+TAGS:        sociology, software
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Overview of the social aspects of software niche
+
+On January 15, 2018 Stack Overflow published the results of the [[https://insights.stackoverflow.com/survey/2018/?utm_source=Iterable&utm_medium=email&utm_campaign=dev-survey-2018-promotion][annual
+survey]] conducted in January.
+
+The word "developer" will be exclusively used as an abstraction for
+the average developer who responded to this year Stack Overflow's
+survey.
+
+* Over 50 percent of developers are from university-attended families (Bachelor's + Master's)
+  There are likely to be categorized as mid-class citizens in the US, using this criterion.
+
+* Almost 70 percent of developers are between 25
+
+* Above 90 percent of developers are male
+
+* Above 70 percent of developers are white or of European descent
+
+* Over 90 percent of developers are of straight or heterosexual orientation
+
+* Over 70 percent of developers have no children and any other dependents
+
+* Over 50 percent of developers spend between 9 and 12 hours coding
+
+* Only miserable 12.5 percent of developers go out more than two hours a day
+
+* Over 35 percent of developers do not exercise at all
+  Presumably, they don't practice any other physical activity during
+  their working day.
+
+* Global median salary is $70,000
+
+* Almost 70 percent of developers are satisfied
+
+* Vague apprehension of ethics
+  The eluding of responsibility. Upper management is accounted for the
+  ethical transgressions.
